@@ -18,9 +18,9 @@
 
 ## What is this?
 
-Household decisions — trip planning, residential relocation, evacuation — are negotiated by household members, not computed by one equation. **PEMAND** (Persona-Enriched Multi-Agent Negotiation for Household Decision-Making) simulates that negotiation: survey records become theory-grounded personas, members propose independently, and a moderated multi-agent conversation converges on the household's decision.
+Household decisions like trip planning, residential relocation, and evacuation are negotiated by household members. They are not computed by one equation. PEMAND (Persona-Enriched Multi-Agent Negotiation for Household Decision-Making) simulates that negotiation: survey records become theory-grounded personas, members propose independently, and a moderated multi-agent conversation converges on the household's decision.
 
-Evaluated on national and regional household surveys across travel and residential mobility, PEMAND outperforms classical ML and LLM baselines — see the [paper](https://arxiv.org/abs/2604.10475).
+Evaluated on national and regional household surveys across travel and residential mobility, PEMAND outperforms classical ML and LLM baselines. See the [paper](https://arxiv.org/abs/2604.10475) for details.
 
 ## Repositories
 
@@ -29,10 +29,10 @@ Evaluated on national and regional household surveys across travel and residenti
 | [`travel-decision`](https://github.com/HDSim-AI/travel-decision) | Household trip planning and generation |
 | [`residential-mobility`](https://github.com/HDSim-AI/residential-mobility) | Move-or-stay relocation decisions |
 
-Initial code releases are landing now — **Watch** the repositories to follow.
+Initial code releases are in progress. Watch the repositories to follow.
 
 ## Contributing
 
-New decision domains (energy, purchases, family planning), agent skills, datasets, and evaluations are welcome. Open an issue in the relevant repository to get started.
+New decision domains such as energy use, major purchases, and family planning are welcome, along with agent skills, datasets, and evaluations. Open an issue in the relevant repository to get started.
 
-<sub>MIT licensed · Try the <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html">live demo</a> — six replayable household scenarios, no setup required.</sub>
+<sub>MIT licensed. Try the <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html">live demo</a>: six replayable household scenarios, no setup required.</sub>
