@@ -46,4 +46,18 @@ A decision domain is configuration rather than a new pipeline, so adding one mea
 
 New decision domains such as energy use, major purchases, and family planning are welcome, along with agent skills, datasets, and evaluations. Open an issue in the relevant repository to get started.
 
+If something is unclear, or you think a design choice is wrong, or you want to talk through a use case before writing code, send an email to mustafasameen@ufl.edu. We would rather have the conversation than have you guess.
+
+## Citation
+
+```bibtex
+@article{sun2026pemand,
+  title   = {PEMAND: Persona-Enriched Multi-Agent Negotiation for Household Decision-Making},
+  author  = {Sun, Yuran and Sameen, Mustafa and Zhang, Yaotian and Gu, Rongguan and
+             Vibhute, Mrunal and Wu, Chia-yu and Lei, Yuanyuan and Zhao, Xilei},
+  journal = {arXiv preprint arXiv:2604.10475},
+  year    = {2026}
+}
+```
+
 <sub>MIT licensed. Try the <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html">live demo</a>: six replayable household scenarios, no setup required.</sub>
