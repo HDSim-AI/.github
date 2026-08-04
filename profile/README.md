@@ -24,12 +24,23 @@ Evaluated on national and regional household surveys across travel and residenti
 
 ## Repositories
 
-| Repository | Domain |
+| Repository | What it is |
 |---|---|
+| [`hdsim`](https://github.com/HDSim-AI/hdsim) | The method core: persona construction, proposals, moderated negotiation |
 | [`travel-decision`](https://github.com/HDSim-AI/travel-decision) | Household trip planning and generation |
 | [`residential-mobility`](https://github.com/HDSim-AI/residential-mobility) | Move-or-stay relocation decisions |
 
-Initial code releases are in progress. Watch the repositories to follow.
+Start with `hdsim`. A recorded household negotiation replays in the terminal with no API key and no
+data download:
+
+```bash
+git clone https://github.com/HDSim-AI/hdsim && cd hdsim
+pip install -e .
+hdsim demo
+```
+
+A decision domain is configuration rather than a new pipeline, so adding one means writing a
+`DomainConfig` and a survey loader. `travel-decision` is the reference implementation.
 
 ## Contributing
 
