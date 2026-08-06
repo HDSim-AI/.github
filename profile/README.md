@@ -13,9 +13,13 @@
 <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html"><img src="https://img.shields.io/badge/Live%20Demo-HDSim-2f7d5f?style=flat-square" alt="Live Demo"></a>
 </p>
 
-<img src="./hdsim_hero.gif" width="76%" alt="A four-member household negotiating its trips for tomorrow, from survey record to a consensus of 14">
+<a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html"><img src="./hdsim_hero.gif" width="76%" alt="A four-member household negotiating its trips for tomorrow, from survey record to a consensus of 14"></a>
 
-[▶ Watch the full launch film](https://github.com/HDSim-AI/.github/releases/download/media-2026-08/hdsim_launch.mp4)
+### [▶  Try the live demo](https://yushundong.github.io/pemand_simulation/pemand_official_site.html)
+
+Six household scenarios replay in your browser. Nothing to install, no API key.
+
+<sub><a href="https://github.com/HDSim-AI/.github/releases/download/media-2026-08/hdsim_launch.mp4">Watch the 74-second launch film</a></sub>
 
 </div>
 
@@ -48,13 +52,26 @@ Household decisions like trip planning, residential relocation, and evacuation a
 
 Evaluated on national and regional household surveys across travel and residential mobility, PEMAND outperforms classical ML and LLM baselines. See the [paper](https://arxiv.org/abs/2604.10475) for details.
 
-## Repositories
+## How the repositories fit together
 
-| Repository | What it is |
+**One core, and a package per decision.** `hdsim` holds the method. Each domain package adds only
+the survey loader and the configuration for one decision, so the pipeline itself never changes.
+
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./architecture-dark.svg">
+  <img src="./architecture-light.svg" width="100%" alt="hdsim is the method core; travel-decision and residential-mobility are domain packages built on it, and a new domain slots in alongside them">
+</picture>
+</p>
+
+| The core | |
 |---|---|
-| [`hdsim`](https://github.com/HDSim-AI/hdsim) | The method core: persona construction, proposals, moderated negotiation |
-| [`travel-decision`](https://github.com/HDSim-AI/travel-decision) | Household trip planning and generation |
-| [`residential-mobility`](https://github.com/HDSim-AI/residential-mobility) | Move-or-stay relocation decisions |
+| [`hdsim`](https://github.com/HDSim-AI/hdsim) | Persona construction, independent proposals, moderated negotiation. Every domain uses it unchanged. |
+
+| Domain packages | Decides |
+|---|---|
+| [`travel-decision`](https://github.com/HDSim-AI/travel-decision) | How many trips a household makes tomorrow |
+| [`residential-mobility`](https://github.com/HDSim-AI/residential-mobility) | Whether a household moves |
 
 Start with `hdsim`. A recorded household negotiation replays in the terminal with no API key and no
 data download:
