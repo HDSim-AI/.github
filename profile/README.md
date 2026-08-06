@@ -23,34 +23,37 @@ Six household scenarios replay in your browser. Nothing to install, no API key.
 
 </div>
 
-## 🧭 What can HDSim do?
+## What HDSim does
 
-HDSim predicts what a household decides, from the survey records you already have. Give it rows
-from a travel survey or a panel study and it returns a decision for each household, plus the
-conversation among the household members that produced it.
+Household decisions like trip planning, relocation and evacuation are negotiated between the
+people in the household. They are not computed by one equation. HDSim simulates that negotiation
+and returns a decision for each household, with the conversation that produced it.
+
+<p align="center">
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="./pipeline-core-dark.svg">
+  <img src="./pipeline-core-light.svg" width="100%" alt="A survey record becomes personas, then independent proposals, then a moderated negotiation, then the household decision">
+</picture>
+</p>
+
+The method is PEMAND, persona-enriched multi-agent negotiation. Across national and regional
+household surveys in both domains it outperforms classical ML and LLM baselines; the
+[paper](https://arxiv.org/abs/2604.10475) has the numbers.
 
 | You are trying to… | What you get |
 |---|---|
-| Forecast trip generation under a new road price, fare, or transit line | Per-household trip counts under the scenario you describe |
+| Forecast trip generation under a new price, fare, or transit line | Per-household trip counts under that scenario |
 | Plan for evacuation or post-disaster relocation | Move or stay, household by household |
 | Test a policy you cannot field a new survey for | A counterfactual run on households already in your data |
-| Explain a prediction, not just report it | The negotiation transcript behind every number |
-| Fill in a group your survey covers thinly | Decisions for those households, from the records you do have |
 
 | You want to… | Go to |
 |---|---|
 | See it run, with nothing installed | [Live demo](https://yushundong.github.io/pemand_simulation/pemand_official_site.html) |
-| Watch a household negotiate in your terminal | [Quick start](#repositories) |
+| Watch a household negotiate in your terminal | [Quick start](#how-the-repositories-fit-together) |
 | Predict household trips | [travel-decision](https://github.com/HDSim-AI/travel-decision) |
 | Predict whether a household moves | [residential-mobility](https://github.com/HDSim-AI/residential-mobility) |
-| Model a decision we have not built yet | [Adding a domain](https://github.com/HDSim-AI/hdsim#adding-a-domain) |
+| Add a decision we have not built yet | [Contributing](https://github.com/HDSim-AI/hdsim/blob/main/CONTRIBUTING.md) |
 | Read the method | [arXiv:2604.10475](https://arxiv.org/abs/2604.10475) |
-
-## How it works
-
-Household decisions like trip planning, residential relocation, and evacuation are negotiated by household members. They are not computed by one equation. PEMAND (Persona-Enriched Multi-Agent Negotiation for Household Decision-Making) simulates that negotiation: survey records become theory-grounded personas, members propose independently, and a moderated multi-agent conversation converges on the household's decision.
-
-Evaluated on national and regional household surveys across travel and residential mobility, PEMAND outperforms classical ML and LLM baselines. See the [paper](https://arxiv.org/abs/2604.10475) for details.
 
 ## How the repositories fit together
 
@@ -82,12 +85,14 @@ pip install -e .
 hdsim demo
 ```
 
-A decision domain is configuration rather than a new pipeline, so adding one means writing a
-`DomainConfig` and a survey loader. `travel-decision` is the reference implementation.
-
 ## Contributing
 
-New decision domains such as energy use, major purchases, and family planning are welcome, along with agent skills, datasets, and evaluations. Open an issue in the relevant repository to get started.
+A new decision domain is one file. Copy
+[`minimal_domain.py`](https://github.com/HDSim-AI/hdsim/blob/main/examples/minimal_domain.py),
+change four marked places, and run it with no API key. Energy use, major purchases, family planning
+and evacuation are all open; so are survey loaders, scenarios and evaluations for the two domains
+that exist. The [contributing guide](https://github.com/HDSim-AI/hdsim/blob/main/CONTRIBUTING.md)
+starts by asking which of those you want.
 
 If something is unclear, or you think a design choice is wrong, or you want to talk through a use case before writing code, send an email to mustafasameen@ufl.edu. We would rather have the conversation than have you guess.
 
