@@ -42,9 +42,9 @@ household surveys in both domains it outperforms classical ML and LLM baselines;
 
 | You are trying to… | What you get |
 |---|---|
-| Forecast trip generation under a new price, fare, or transit line | Per-household trip counts under that scenario |
+| Forecast trip generation under a new price, fare, or transit line | A trip count for each household, from its own record |
 | Plan for evacuation or post-disaster relocation | Move or stay, household by household |
-| Test a policy you cannot field a new survey for | A counterfactual run on households already in your data |
+| Test a policy you cannot field a new survey for | Predictions for the households you already have, with no new fieldwork |
 
 | You want to… | Go to |
 |---|---|
@@ -89,7 +89,7 @@ hdsim demo
 
 A new decision domain is one file. Copy
 [`minimal_domain.py`](https://github.com/HDSim-AI/hdsim/blob/main/examples/minimal_domain.py),
-change four marked places, and run it with no API key. Energy use, major purchases, family planning
+change six marked places, and run it with no API key. Energy use, major purchases, family planning
 and evacuation are all open; so are survey loaders, scenarios and evaluations for the two domains
 that exist. The [contributing guide](https://github.com/HDSim-AI/hdsim/blob/main/CONTRIBUTING.md)
 starts by asking which of those you want.
