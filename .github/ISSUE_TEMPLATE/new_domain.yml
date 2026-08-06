@@ -1,0 +1,38 @@
+name: A new decision domain
+description: Propose a household decision HDSim does not model yet
+labels: [domain]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Open this before writing much code. The `DomainConfig` shape is easier to check now than
+        after a loader exists. `examples/minimal_domain.py` in `hdsim` is a working domain in one
+        file if you want to see the shape first.
+  - type: input
+    id: decision
+    attributes:
+      label: What does the household decide?
+      placeholder: "Whether to install a heat pump this year"
+    validations: {required: true}
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Is the answer a count or a yes or no?
+      options: ["A count (value_type=int)", "A yes or no (value_type=bool)", "Not sure yet"]
+    validations: {required: true}
+  - type: input
+    id: survey
+    attributes:
+      label: Which survey or panel has the records?
+      description: And can its derived records be redistributed? Most cannot.
+    validations: {required: true}
+  - type: input
+    id: truth
+    attributes:
+      label: What is the ground truth, and is it in that dataset?
+      description: A domain without an observed outcome can be demonstrated but not evaluated.
+  - type: textarea
+    id: leakage
+    attributes:
+      label: Which words would give the answer away?
+      description: "These become `banned_patterns`. A persona that states the outcome has already answered the question."

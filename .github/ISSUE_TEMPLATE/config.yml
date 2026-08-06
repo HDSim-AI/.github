@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Try it without installing anything
+    url: https://yushundong.github.io/pemand_simulation/pemand_official_site.html
+    about: Six household scenarios replay in the browser.
+  - name: How to contribute
+    url: https://github.com/HDSim-AI/hdsim/blob/main/CONTRIBUTING.md
+    about: Routes by what you are trying to do — a new domain, an existing one, or the core.
+  - name: Ask about a use case
+    url: mailto:mustafasameen@ufl.edu
+    about: Happy to talk it through before you write code.

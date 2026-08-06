@@ -1,0 +1,34 @@
+name: Something is broken
+description: A command, a loader, or a result that does not behave as documented
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What did you run, and what happened?
+      description: The command or code, and the output or traceback. Verbatim is better than described.
+      render: shell
+    validations: {required: true}
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect instead?
+    validations: {required: true}
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: "Output of `hdsim --version`, or the commit you are on."
+    validations: {required: true}
+  - type: input
+    id: model
+    attributes:
+      label: Model and endpoint
+      description: "`hdsim config` prints both. Leave blank if this reproduces offline with `hdsim demo`."
+  - type: checkboxes
+    id: offline
+    attributes:
+      label: Does it reproduce with no API key?
+      options:
+        - label: "Yes, `hdsim demo` shows it too"
+        - label: "No, it needs a live model"
