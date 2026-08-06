@@ -15,7 +15,7 @@
 
 <img src="./hdsim_hero.gif" width="76%" alt="A four-member household negotiating its trips for tomorrow, from survey record to a consensus of 14">
 
-[▶ Watch the full launch film](./hdsim_launch.mp4)
+[▶ Watch the full launch film](https://github.com/HDSim-AI/.github/releases/download/media-2026-08/hdsim_launch.mp4)
 
 </div>
 
