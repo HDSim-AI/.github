@@ -6,6 +6,7 @@
 
 <p>
 <a href="https://github.com/HDSim-AI/hdsim"><img src="https://img.shields.io/github/stars/HDSim-AI/hdsim?style=flat-square&amp;logo=github&amp;label=hdsim%20stars" alt="Stars"></a>
+<a href="https://github.com/HDSim-AI"><img src="https://komarev.com/ghpvc/?username=HDSim-AI&amp;label=Visitors&amp;color=2f7d5f&amp;style=flat-square" alt="Visitors"></a>
 <a href="https://github.com/HDSim-AI/hdsim/actions/workflows/ci.yml"><img src="https://img.shields.io/github/actions/workflow/status/HDSim-AI/hdsim/ci.yml?branch=main&amp;style=flat-square&amp;label=CI" alt="CI"></a>
 <a href="https://github.com/HDSim-AI/hdsim/blob/main/pyproject.toml"><img src="https://img.shields.io/badge/python-3.10%2B-blue?style=flat-square" alt="Python 3.10+"></a>
 <a href="https://github.com/HDSim-AI/hdsim/blob/main/LICENSE"><img src="https://img.shields.io/github/license/HDSim-AI/hdsim?style=flat-square" alt="MIT License"></a>
@@ -109,3 +110,11 @@ If something is unclear, or you think a design choice is wrong, or you want to t
 ```
 
 <sub>MIT licensed. Try the <a href="https://yushundong.github.io/pemand_simulation/pemand_official_site.html">live demo</a>: six replayable household scenarios, no setup required.</sub>
+
+## Star history
+
+<img src="assets/star-history.svg" alt="Star history across the three repositories" width="800">
+
+<sub>All three repositories, regenerated daily from our own stargazer data. star-history.com
+cannot chart these: GitHub restricted the stargazers timestamp API on 2026-06-30 to a
+repository's own collaborators.</sub>
