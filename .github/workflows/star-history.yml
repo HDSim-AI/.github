@@ -1,0 +1,46 @@
+name: Star history
+
+on:
+  schedule:
+    - cron: "31 4 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  chart:
+    name: regenerate combined chart
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      # A combined chart reads three repositories, so the per-repo GITHUB_TOKEN is not enough.
+      # STAR_HISTORY_TOKEN must be a fine-grained token with read access to hdsim,
+      # travel-decision and residential-mobility. Without it this job exits quietly.
+      - name: Render the chart
+        env:
+          GITHUB_TOKEN: ${{ secrets.STAR_HISTORY_TOKEN }}
+        run: |
+          if [ -z "$GITHUB_TOKEN" ]; then
+            echo "STAR_HISTORY_TOKEN is not set; skipping the combined chart"
+            exit 0
+          fi
+          python tools/star_history.py \
+            HDSim-AI/hdsim,HDSim-AI/travel-decision,HDSim-AI/residential-mobility \
+            profile/assets/star-history.svg
+
+      - name: Commit if the chart changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A profile/assets
+          if git diff --staged --quiet; then
+            echo "no new stars, nothing to commit"
+            exit 0
+          fi
+          git commit -m "Update star history"
+          git push
